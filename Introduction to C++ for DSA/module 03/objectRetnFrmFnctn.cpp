@@ -15,6 +15,12 @@ class Student
     }
 
 };
+
+Student fun()
+{
+    Student abdur(2,4,5);
+    return abdur;
+}
 int main()
 {
     Student rahim(45, 2, 5);
@@ -22,6 +28,9 @@ int main()
 
     //shortcurt way to give input in object that is constructor
 
-    cout << rahim.roll <<" "<< rahim.cls <<" "<< rahim.gpa;
+    //cout << rahim.roll <<" "<< rahim.cls <<" "<< rahim.gpa;
+
+    Student obj = fun();
+    cout << obj.roll <<" "<< obj.cls <<" "<< obj.gpa;
     return 0;
 }
