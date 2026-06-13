@@ -10,8 +10,8 @@ int main()
 
     // 2nd way to write
 
-    string s1("hello world", 5); // it resize the string witgh constructor.
-    //cout << s1 <<endl;
+    string s1("hello world", 2); // it resize the string witgh constructor.
+    cout << s1 <<endl;
 
     //3
     string s2 = "hello world";
@@ -20,6 +20,6 @@ int main()
 
     //4
     string s3(5, 'A');
-    cout << s3;
+    //cout << s3;
     return 0;
 }
