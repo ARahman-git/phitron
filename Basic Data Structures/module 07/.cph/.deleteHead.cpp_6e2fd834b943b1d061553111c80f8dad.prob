@@ -1,0 +1,1 @@
+{"name":"Local: deleteHead","url":"d:\\phitron\\Basic Data Structures\\module 07\\deleteHead.cpp","tests":[{"id":1783180561172,"input":"10 20 30 -1","output":"20\n30"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\phitron\\Basic Data Structures\\module 07\\deleteHead.cpp","group":"local","local":true}
