@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
     public:
@@ -14,19 +13,6 @@ class Node
     };
 };
 
-void insert_at_head(Node* &head, Node* &tail, int val)
-{
-    Node* newnode = new Node(val);
-    if(head == NULL)
-    {
-        head = newnode;
-        tail = newnode;
-        return;
-    }
-    newnode->next = head;
-    head = newnode;      
-}
-
 void insert_at_tail_optimized(Node* &head, int val, Node* &tail)
 {
     Node* newnode = new Node(val);
@@ -38,14 +24,10 @@ void insert_at_tail_optimized(Node* &head, int val, Node* &tail)
         return;
     }
     
-
-    
     tail->next = newnode;
     tail = tail->next;
 
 }
-
-
 
 void delete_at_any_pos(Node* &head, Node* &tail, int pos)
 {
@@ -89,35 +71,45 @@ void print_lnkdList(Node* head)
         temp = temp->next;
     }
 }
+
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
-    int q;
-    cin >> q;
-    while (q--)
+    vector<int> v(1005, 0);
+    Node* head = NULL;
+    Node* tail = NULL;
+
+    while(1)
     {
-        int x;
-        long long v;
-        cin >> x >> v;
+        int val;
+        cin >> val;
+        if(val == -1)
+            break;
+        insert_at_tail_optimized(head, val, tail);
 
+        v[val]++;
 
-        if(x == 0)
-        {
-            insert_at_head(head, tail, v);
-        }
-        else if(x == 1)
-        {
-            insert_at_tail_optimized(head, v, tail);
-        }
-        
-        else if (x == 2)
-        {
-            delete_at_any_pos(head, tail, v);
-        }
-        
-        print_lnkdList(head);
-        cout << "\n";
     }
+
+    Node *cur= head;
+    while (cur!=NULL)
+    {
+        Node *temp = cur;
+        while (temp->next !=NULL)
+        {
+            if (temp->next->val == cur->val)
+            {
+                Node *del = temp->next;
+                temp->next = temp->next->next;
+
+                if (del == tail)
+                    tail = temp;
+                delete del;
+            }
+            else
+                temp = temp->next;
+        }
+        cur = cur->next;
+    }
+    print_lnkdList(head);
     return 0;
 }
