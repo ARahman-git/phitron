@@ -94,6 +94,31 @@ void delete_at_tail(Node* &head, Node* &tail)
 
 
 }
+
+void delete_at_anypos(Node* &head, Node*tail, int idx)
+{
+    if(head == NULL)
+    {
+        cout << "Null linked list";
+        return;
+    }
+
+    Node* temp = head;
+    for (int i = 1; i < idx; i++)
+    {
+        if(temp->next == NULL)
+        {
+            cout << "No Valid Index";
+        }
+        temp = temp->next;
+    }
+    Node* deleteNode = temp->next;
+    temp->next = temp->next->next;
+    temp->next->prev = temp;
+    delete deleteNode;
+    
+
+}
 void print_forword(Node* head)
 {
     Node* temp = head;
@@ -119,27 +144,37 @@ void print_backword(Node* tail)
 }
 int main()
 {
-    // Node* head = NULL;
-    // Node* tail = NULL;
-    Node* head = new Node(20);
-    Node* a = new Node(30);
-    Node* tail = new Node(40);
+    Node* head = NULL;
+    Node* tail = NULL;
+    // Node* head = new Node(20);
+    // Node* a = new Node(30);
+    // Node* tail = new Node(40);
 
-    head->next = a;
-    a->prev = head;
-    a->next = tail;
-    tail->prev = a;
+    // head->next = a;
+    // a->prev = head;
+    // a->next = tail;
+    // tail->prev = a;
+    int val;
+    while(true)
+    {
+        cin >> val;
+        if(val == -1)
+        {
+            break;
+        }
+        insert_at_tail(head, tail, val);
+    }
 
-    insert_at_head(head, tail, 10);
-    insert_at_tail(head, tail, 50);
-    insert_at_anyPos(head, 2, 100);
+    // insert_at_head(head, tail, 10);
+    // insert_at_tail(head, tail, 50);
+    // insert_at_anyPos(head, 2, 100);
     
 
-    print_forword(head);
-    //print_backword(tail);
+    // print_forword(head);
+    // //print_backword(tail);
 
-    delete_at_head(head, tail);
-    delete_at_tail(head, tail);
+    // delete_at_head(head, tail);
+    // delete_at_tail(head, tail);
     print_forword(head);
     return 0;
 }
