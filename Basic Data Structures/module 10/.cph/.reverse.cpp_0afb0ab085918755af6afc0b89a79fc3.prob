@@ -1,0 +1,1 @@
+{"name":"Local: reverse","url":"d:\\phitron\\Basic Data Structures\\module 10\\reverse.cpp","tests":[{"id":1785338464471,"input":"10 20 30 40 50 -1","output":"50 40 30 20 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\phitron\\Basic Data Structures\\module 10\\reverse.cpp","group":"local","local":true}
