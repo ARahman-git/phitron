@@ -22,7 +22,16 @@ int main()
     //l2.erase(next(l2.begin(),3));
     l2.erase(next(l2.begin(),2), next(l2.begin(),4)); // multiple value erase
 
+    replace(l2.begin(), l2.end(), 5, 100);
 
+    auto it = find(l2.begin(), l2.end(), 60);
+    if(it == l.end())
+    {
+        cout << "Not found";
+    }
+    else{
+        cout << "Found" << endl;
+    }
     for(int val : l2)
     {
         cout << val << " ";
