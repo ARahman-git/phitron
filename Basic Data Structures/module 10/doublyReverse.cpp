@@ -119,17 +119,14 @@ void delete_at_anypos(Node* &head, Node*tail, int idx)
     
 
 }
-void reverse_singly(Node* &head, Node* temp, Node* &tail)
+void reverseDoubly(Node* head, Node* tail)
 {
-    if(temp->next == NULL)
+    for (Node* i = head, *j = tail; i != j && i->prev != j; i = i->next, j = j->prev)
     {
-        head = temp;
-        return;
+        swap(i->val, j->val);
     }
-    reverse_singly(head, temp->next, tail);
-    temp->next->next = temp;
-    temp->next = NULL;
-    tail = temp;
+    
+
 }
 void print_forword(Node* head)
 {
@@ -158,6 +155,7 @@ int main()
 {
     Node* head = NULL;
     Node* tail = NULL;
+
     int val;
     while(true)
     {
@@ -169,7 +167,7 @@ int main()
         insert_at_tail(head, tail, val);
     }
 
-    reverse_singly(head, head, tail);
+    reverseDoubly(head, tail);
     print_forword(head);
     return 0;
 }
