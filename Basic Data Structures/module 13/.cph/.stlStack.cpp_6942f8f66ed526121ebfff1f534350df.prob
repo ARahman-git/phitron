@@ -1,0 +1,1 @@
+{"name":"Local: stlStack","url":"d:\\phitron\\Basic Data Structures\\module 13\\stlStack.cpp","tests":[{"id":1785747147764,"input":"5\n10 20 30 40 50","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\phitron\\Basic Data Structures\\module 13\\stlStack.cpp","group":"local","local":true}
